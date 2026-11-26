@@ -1,0 +1,151 @@
+/* 数览中国 — 原创排版：宣纸底色、墨色正文、朱红印章。系统字体，无外部资源。 */
+:root {
+  --paper: #f7f3ea;
+  --card: #fffdf7;
+  --ink: #22303a;
+  --muted: #6b7a82;
+  --line: #e3ddd0;
+  --red: #c8402a;
+  --red-dark: #a83422;
+  --teal: #2e6f6a;
+  --gold: #b98a2f;
+  --blue: #3d6e9e;
+  --shadow: 0 1px 3px rgba(34, 48, 58, 0.12);
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.wrap { max-width: 1020px; margin: 0 auto; padding: 0 20px; }
+a { color: var(--red); }
+h1 {
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: 30px;
+  line-height: 1.3;
+  margin: 28px 0 8px;
+  letter-spacing: 0.02em;
+}
+h2 {
+  font-family: Georgia, "Songti SC", "STSong", serif;
+  font-size: 21px;
+  margin: 30px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--ink);
+}
+.intro { color: var(--muted); font-size: 16px; max-width: 72ch; margin: 0 0 8px; }
+
+/* 页眉 */
+.masthead { background: var(--ink); color: #f2ede1; }
+.masthead-in { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.seal {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 6px;
+  background: var(--red); color: #fff;
+  font-family: Georgia, "Songti SC", serif; font-size: 26px; font-weight: 700;
+}
+.brand-text strong { display: block; font-size: 22px; letter-spacing: 0.08em; line-height: 1.2; }
+.brand-text em { display: block; font-style: normal; font-size: 12px; color: #b9c2c7; letter-spacing: 0.14em; }
+#mainnav { display: flex; flex-wrap: wrap; gap: 4px; margin-left: auto; }
+#mainnav a {
+  color: #d8dee2; text-decoration: none; padding: 7px 13px; border-radius: 6px; font-size: 15px;
+}
+#mainnav a:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+#mainnav a.active { background: var(--red); color: #fff; }
+
+/* KPI 卡片 */
+.kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin: 20px 0 8px; }
+.kpi {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px 14px 12px; box-shadow: var(--shadow);
+}
+.kpi-label { font-size: 13px; color: var(--muted); }
+.kpi-value { font-family: Georgia, "Songti SC", serif; font-size: 30px; font-weight: 700; color: var(--ink); line-height: 1.25; }
+.kpi-unit { font-size: 14px; font-weight: 400; color: var(--muted); margin-left: 2px; }
+.kpi-change { font-size: 13px; color: var(--red); font-weight: 600; }
+.kpi-note { font-size: 12px; color: var(--muted); }
+
+/* 图表 */
+.chartbox {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 16px 18px 8px; margin: 18px 0; box-shadow: var(--shadow);
+}
+.charthead { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.charthead h2 { margin: 0; border: 0; padding: 0; }
+.toggle { display: flex; gap: 6px; }
+.toggle button {
+  border: 1px solid var(--line); background: var(--paper); color: var(--ink);
+  border-radius: 999px; padding: 5px 13px; font-size: 13px; cursor: pointer;
+}
+.toggle button.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.chart { width: 100%; height: auto; display: block; }
+.chart .axis { font-size: 12px; fill: var(--muted); font-family: inherit; }
+.chart .unit { font-size: 12px; fill: var(--muted); font-family: inherit; }
+.chart .barval { font-size: 13px; fill: var(--ink); font-weight: 600; font-family: inherit; }
+.chart .legend { font-size: 14px; fill: var(--ink); font-family: inherit; }
+.chart .donutcenter { font-size: 20px; fill: var(--ink); font-weight: 700; font-family: Georgia, serif; }
+.chart .donutsub { font-size: 12px; fill: var(--muted); font-family: inherit; }
+
+/* 栏目导航卡 */
+.navcards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0; }
+.navcard {
+  display: block; background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px 16px; text-decoration: none; color: var(--ink); box-shadow: var(--shadow);
+}
+.navcard:hover { border-color: var(--red); }
+.navcard strong { display: block; font-size: 18px; color: var(--red); }
+.navcard span { font-size: 13px; color: var(--muted); }
+
+/* 表格 */
+table.data { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); margin: 10px 0; }
+table.data th, table.data td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--line); font-size: 15px; }
+table.data thead th { background: var(--ink); color: #f2ede1; font-weight: 600; white-space: nowrap; }
+table.data tbody tr:last-child td { border-bottom: 0; }
+table.data tbody tr:hover { background: #f3ecdc; }
+table.data td.num, table.data th.num { text-align: right; font-variant-numeric: tabular-nums; }
+th[data-table] { cursor: pointer; user-select: none; }
+.sortmark { font-size: 12px; opacity: 0.75; }
+.hint { font-size: 13px; color: var(--muted); }
+
+/* 地区横条 */
+.hbar { display: flex; align-items: center; gap: 10px; margin: 9px 0; }
+.hbar-name { width: 48px; text-align: right; font-size: 14px; flex: none; }
+.hbar-track { flex: 1; height: 18px; background: #efe9db; border-radius: 4px; overflow: hidden; }
+.hbar-fill { height: 100%; background: linear-gradient(90deg, var(--teal), var(--red)); border-radius: 4px; }
+.hbar-val { width: 110px; font-size: 14px; font-variant-numeric: tabular-nums; flex: none; }
+
+/* 搜索与地区说明 */
+.searchlabel { display: block; font-size: 14px; margin: 6px 0 2px; }
+.searchlabel input {
+  font: inherit; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--card); color: var(--ink); width: min(320px, 100%);
+}
+.regionnotes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+.regionnote { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; box-shadow: var(--shadow); }
+.regionnote strong { color: var(--red); }
+.regionnote p { margin: 4px 0 0; font-size: 14px; }
+
+/* 来源与页脚 */
+.source { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; margin-top: 24px; }
+.foot { background: var(--ink); color: #b9c2c7; margin-top: 40px; padding: 22px 0 28px; font-size: 13px; }
+.foot p { margin: 4px 0; }
+
+/* 手机 */
+@media (max-width: 760px) {
+  h1 { font-size: 24px; }
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+  .navcards { grid-template-columns: 1fr 1fr; }
+  .regionnotes { grid-template-columns: 1fr; }
+  .masthead-in { gap: 10px; }
+  #mainnav { margin-left: 0; }
+  #mainnav a { padding: 6px 10px; font-size: 14px; }
+  table.data th, table.data td { padding: 8px 8px; font-size: 14px; }
+  .hbar-val { width: 96px; font-size: 13px; }
+  .chartbox { padding: 12px 10px 6px; }
+}
